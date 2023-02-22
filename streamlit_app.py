@@ -57,7 +57,7 @@ if streamlit.button('Get Fruit List'):
     streamlit.dataframe(my_data_row)
 
 
-def insert_fruit():
+def insert_fruit(fruit_add):
     with my_cnx.cursor() as my_cur:
         my_cur.execute(
             "insert into pc_rivery_db.public.fruit_load_list values ('" + fruit_add + "')")
