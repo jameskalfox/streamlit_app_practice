@@ -36,3 +36,7 @@ my_cur = my_cnx.cursor()
 my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 my_data_row = my_cur.fetchall()
 streamlit.dataframe(my_data_row)
+
+fruit_add = streamlit.text_input("Add a fruit:")
+my_cur.execute(
+    "insert into pc_rivery_db.public.fruit_load_list values (fruit_add)")
